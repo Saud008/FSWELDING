@@ -59,7 +59,7 @@ def predict_image(image_path):
 
     return formatted_results, output_path
 
-@app.route("/home")
+@app.route("/")
 def home():
     result = request.args.get("result", None)
     image_url = request.args.get("image_url", None)

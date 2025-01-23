@@ -5,68 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welding Prediction</title>
     <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 200vh;
+            min-height: 100vh;
             margin: 0;
             color: #fff;
-        }
-        .container {
+            flex-direction: column;
             text-align: center;
+        }
+
+        .container {
             background: rgba(255, 255, 255, 0.15);
             padding: 30px 50px;
             border-radius: 16px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(12px);
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
         }
+
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #e6e6e6;
         }
+
         form {
             margin-bottom: 20px;
         }
+
+        label {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            color: #d1d1d1;
+        }
+
         input[type="file"] {
-            padding: 10px;
-            background: #ffffff;
+            padding: 12px;
+            background: #fff;
             border: 1px solid #d1d1d1;
-            border-radius: 6px;
+            border-radius: 8px;
             width: 100%;
             margin-bottom: 20px;
+            font-size: 1rem;
+            color: #333;
         }
+
         button {
             background: linear-gradient(135deg, #6dd5ed, #2193b0);
             color: white;
             border: none;
             padding: 12px 25px;
-            font-size: 16px;
+            font-size: 1.1rem;
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
         }
+
         button:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(33, 147, 176, 0.5);
         }
+
         #result {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 1.2rem;
             color: #d1d1d1;
         }
+
         img {
             margin-top: 20px;
             max-width: 100%;
             border-radius: 8px;
         }
+
         footer {
             margin-top: 20px;
             font-size: 0.85rem;
             color: #d1d1d1;
+        }
+
+        /* Media Queries for better responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            input[type="file"], button {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            button {
+                font-size: 1rem;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -80,13 +135,13 @@
         </form>
 
         {% if result is not none %}
-            <div>
+            <div id="result">
                 <h2>Uploaded Image:</h2>
                 <img src="{{ image_url }}" alt="Uploaded Image">
             </div>
         {% endif %}
 
-        <footer>Powered by Welding AI | © 2025</footer>
+        <footer>Powered by Friction Stir Welding AI | © 2025</footer>
     </div>
 </body>
 </html>
