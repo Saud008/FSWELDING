@@ -83,3 +83,5 @@ After training, the model can be exported to various formats such as TorchScript
 ## Deployment
 The trained model can be integrated into real-time applications such as Flask-based web apps or edge devices for monitoring welding defects. Batch inference capabilities allow for processing multiple images simultaneously.
 
+![Screenshot 2025-01-23 232057](https://github.com/user-attachments/assets/92a5f05c-e8a0-4e06-8bc5-a5e40aa82119)
+
